@@ -11,7 +11,7 @@ buttons.forEach(function (button) {
   });
   button.addEventListener('mouseover', function(){
     buttons.forEach(function(active){
-      if (active.classList.contains('active')){
+      if (active.classList.contains('active') && active !== button){
         active.classList.add('active-change-color');
       }
     })

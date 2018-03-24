@@ -11,13 +11,11 @@ projects.forEach(function(project){
     //au hover de l'image, changer le bg image de la div img-part
     //dataset.image définit le chemin de l'image pour le JS
     imgPart.style.backgroundImage = 'url('+project.dataset.image+')';
-    // blueLines.classList.add('blue-line-appear');
   });
   //détecter lorsque le hover se termine
   project.addEventListener('mouseout', function(){
     //alors, remettre l'image de départ
     imgPart.style.backgroundImage = 'url(../img/test1.jpg)';
-    // blueLines.classList.remove('blue-line-appear');
   });
 })
 

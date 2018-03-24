@@ -43,7 +43,7 @@
 }
 
 .active-change-color{
-  color:var(--yellow);
-  border-top: solid 1px var(--yellow);
-  border-bottom: solid 1px var(--yellow);
+  color:var(--yellow) !important;
+  border-top: solid 1px var(--yellow) !important;
+  border-bottom: solid 1px var(--yellow) !important;
 }
