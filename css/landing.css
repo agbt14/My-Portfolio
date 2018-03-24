@@ -1,0 +1,83 @@
+/* container de la landing page*/
+.landing-page {
+  align-items: flex-start;
+}
+
+/* PARTIES COMMUNES */
+
+/* partie commune à gauche et droite */
+.landing-page-part{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:0;
+  width: 49%;
+  transition : all 0.5s ease-in-out;
+}
+
+/* partie commune aux titres */
+.title-container{
+  background-color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* les titres */
+.landing-page .title{
+  font-size: 14em;
+  font-family: 'novaregular';
+  color: var(--yellow);
+  margin:0;
+  z-index: 1;
+  letter-spacing: 5px;
+}
+
+/* FIN PARTIES COMMUNES */
+
+/* GAUCHE */
+
+/* container du titre gauche */
+.title-container-left{
+  margin-top: 50px;
+  opacity: 0;
+  margin-bottom: 250px;
+  transition: all 1s ease-in-out;
+}
+
+/* animation apparition container titre gauche */
+.title-container-left-appear{
+  margin-top: 0;
+  opacity: 1;
+}
+
+/* animation disparition container titre gauche */
+.title-container-left-disappear{
+  margin-top: -50px;
+  opacity: 0;
+}
+
+/* FIN PARTIE GAUCHE */
+
+/* DROITE */
+
+/* container du titre droit */
+.title-container-right{
+  margin-top: 200px;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+/* animation apparition container titre droit */
+.title-container-right-appear{
+  margin-top: 250px;
+  opacity: 1;
+}
+
+/* animation disparition container titre droit */
+.title-container-right-disappear{
+  margin-top: 300px;
+  opacity: 0;
+}
+
+/* FIN PARTIE DROITE */

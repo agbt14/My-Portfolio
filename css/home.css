@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+.homepage{
+  align-items: center;
+}
+
+.title{
+  font-size: 10em;
+  font-family: 'novaregular';
+  color: var(--yellow);
+  margin:0;
+  z-index: 1;
+}
+
+p{
+  width: 85%;
+  font-size: 1.25em;
+  line-height: 30px;
+  margin: 0;
+}
+
+.see-more{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.arrow{
+  width: 50px;
+  height: 30px;
+}
+
+.click-to-see{
+  text-decoration: none;
+  color:black;
+  margin-top: -8px;
+  margin-left: 1px;
+  font-size: 1em;
+  z-index: 2;
+}
+
+.click-to-see:visited{
+  color:black;
+}
+
+
+.homepage-left{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.homepage-left .title-part{
+  padding-left: 30px;
+}
+
+.about{
+  padding-right: 15px;
+  margin-bottom: -144px;
+  margin-top: 160px;
+  opacity: 0;
+  transition : all 0.3s ease-in-out;
+}
+
+
+.homepage-left .background-line{
+  height: 70px;
+  width:0;
+  background-color: #00adbd;
+  transition: all 0.5s ease-in-out;
+}
+
+
+.left-paragraph{
+  margin-top: 100px;
+  /* margin-left: 140px; */
+  color: var(--lightBlue);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  width: 100%;
+  padding-left: 21%;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-paragraph-appear{
+  margin-top: 68px;
+  opacity: 1;
+}
+
+.homepage-left .see-more{
+  margin-top: 13px;
+}
+
+
+.homepage-right .title-container{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.homepage-right .title-part{
+  padding-right: 30px;
+}
+
+.works{
+  padding-right: 10px;
+  margin-bottom: -85px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.homepage-right .background-line{
+  height:70px;
+  background-color: var(--lightBlue);
+  transition: all 0.5s ease-in-out;
+  width: 0;
+}
+
+
+.right-paragraph{
+  margin-top: 100px;
+  /* margin-left: 190px; */
+  padding-right: 19%;
+  width: 100%;
+  text-align: right;
+  opacity: 0;
+  color: var(--darkBlue);
+  transition: all 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.right-paragraph-appear{
+  margin-top: 30px;
+  opacity: 1;
+}
+
+.homepage-right .see-more{
+  margin-top: 13px;
+  align-items: flex-end;
+}
+
+.link:first-child{
+  color : black;
+  border-top : 1px solid black;
+  border-bottom : 1px solid black;
+}

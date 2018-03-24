@@ -1,0 +1,132 @@
+*{
+  box-sizing: border-box;
+}
+
+:root{
+  --darkBlue: #00adbd;
+  --lightBlue:#7ed3db;
+  --yellow: #f7e234;
+}
+
+
+/* FONT POUR LES TITRES */
+@font-face {
+  font-family: 'novaregular';
+  src: url('../fonts/nova/novabold-webfont.woff2') format('woff2'),
+  url('../fonts/nova/novabold-webfont.woff') format('woff'),
+  url('../fonts/nova/novabold-webfont.ttf') format('truetype'),
+  url('../fonts/nova/novabold-webfont.svg#novaregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+/* FONT POUR LES PARAGRAPHES */
+@font-face {
+  font-family: 'slabo_27';
+  src: url('../fonts/slabo_27/slabo27px-regular-webfont.woff2') format('woff2'),
+  url('../fonts/slabo_27/slabo27px-regular-webfont.woff') format('woff'),
+  url('../fonts/slabo_27/slabo27px-regular-webfont.ttf') format('truetype'),
+  url('../fonts/slabo_27/slabo27px-regular-webfont.svg#slabo_27pxregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body{
+  margin:0;
+  font-family: 'slabo_27';
+  transition: all 0.5s;
+}
+
+.none {
+  display: none !important;
+}
+
+.container{
+  display: flex;
+  height: 100vh;
+  padding : 2vh 1.5vw;
+  justify-content: space-between;
+}
+
+.height-100{
+  height: 100%;
+}
+
+.width-0{
+  width: 0;
+}
+
+.width-100{
+  width: 100% !important;
+}
+
+.background-light-blue{
+  background-color: var(--lightBlue);
+}
+
+.background-dark-blue{
+  background-color: var(--darkBlue);
+}
+
+
+.part{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height:100%;
+  width: 49%;
+}
+
+.svg-border{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-border-animation{
+  width: 100%;
+  height:100%;
+  fill: none;
+  stroke-dasharray: 0 10000;
+  stroke-width: 16px;
+  transition: stroke-dasharray 2s linear;
+}
+
+.stroke-light-blue{
+  stroke: var(--lightBlue);
+}
+
+.stroke-dark-blue{
+  stroke: var(--darkBlue);
+}
+
+.svg-border-animation-on{
+  stroke-dasharray: 10000;
+}
+
+.border-light-blue{
+  border-color: var(--lightBlue);
+}
+
+.border-dark-blue{
+  border-color: var(--darkBlue);
+}
+
+.opacity-1{
+  opacity: 1;
+}
+
+.opacity-0{
+  opacity: 0;
+}
+
+button{
+  border : none;
+  cursor: pointer;
+  outline: none;
+  background: none;
+}

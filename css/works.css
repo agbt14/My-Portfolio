@@ -1,0 +1,46 @@
+.projects{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  width:100%;
+  z-index: 2;
+}
+
+.project-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  width: 100%;
+  /* height: 100%; */
+}
+
+.project-number{
+  width: 12%;
+  z-index: 2;
+  margin-bottom: -104px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.blue-line{
+  height: 45px;
+  width:0;
+  background-color: var(--darkBlue);
+  transition: all 0.7s ease-in-out;
+}
+
+.project-number:hover ~ .blue-line{
+  width:22%;
+}
+
+.img-part{
+  background-image: url(../img/test1.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}

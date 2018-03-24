@@ -1,0 +1,6 @@
+.img-part{
+  background-image: url(../img/contact.jpg);
+  background-size:cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}

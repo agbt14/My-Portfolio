@@ -1,0 +1,49 @@
+.menu{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 5px;
+  margin-right: 20px;
+  opacity:0;
+  transition: all 0.8s;
+}
+
+.link{
+  text-decoration: none;
+  font-family: 'slabo_27';
+  font-size: 0.9em;
+  outline: none;
+  cursor: pointer;
+  color:var(--yellow);
+  padding: 10px;
+  margin: 20px;
+  border-top: solid 1px var(--yellow);
+  border-bottom:  solid 1px var(--yellow);
+  border-right: none;
+  border-left: none;
+  transition: all 0.2s;
+  z-index: 2;
+
+}
+
+.menu > button:visited{
+  color: var(--yellow)
+}
+
+.active{
+  color:black;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.link:hover{
+  color:black;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.active-change-color{
+  color:var(--yellow);
+  border-top: solid 1px var(--yellow);
+  border-bottom: solid 1px var(--yellow);
+}
