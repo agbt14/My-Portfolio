@@ -1,8 +1,20 @@
 
 //CHANGER LES IMAGES AU HOVER D'UN NUMÉRO DE PROJET
+var projectsContainer = document.querySelector('.projects');
 var projects = document.querySelectorAll('.project-number');
 var imgPart = document.querySelector('.img-part');
 var blueLines = document.querySelectorAll('.blue-line');
+var projectClicked = document.querySelector('.project-clicked');
+// affichage un à un les numéros de projets
+
+var projectDelay = 1500;
+
+projects.forEach(function(project) {
+  setTimeout(function () {
+    project.classList.add('opacity-1');
+  }, projectDelay);
+  projectDelay+=500;
+})
 
 //pour chaque projet
 projects.forEach(function(project){
@@ -17,34 +29,37 @@ projects.forEach(function(project){
     //alors, remettre l'image de départ
     imgPart.style.backgroundImage = 'url(../img/test1.jpg)';
   });
-})
+  project.addEventListener('click', function(){
+    projects.forEach(function(clickOnProject){
+      clickOnProject.classList.add('scale-0');
+      projectsContainer.style.display = 'none';
+      projectClicked.style.display='flex';
+    })
 
+    var nomDuProjet = document.querySelector('.nom-du-projet');
+    var projectOne = document.querySelector('.project-one');
+    var blueLineDecoration = document.querySelector('.blue-line-decoration');
+    var projectSubject = document.querySelector('.project-subject');
+    var yellowRectangle = document.querySelector('.yellow-rectangle');
+    var projectDetails = document.querySelector('.project-details');
+    var previousNext = document.querySelector('.previous-next');
 
-// affichage un à un les numéros de projets
+    setTimeout(function () {
+      nomDuProjet.classList.add('margin-left-0');
+      projectOne.classList.add('margin-left-0');
+    }, 500);
+    setTimeout(function () {
+      blueLineDecoration.classList.add('blue-line-decoration-60');
+    }, 1000);
+    setTimeout(function () {
+      projectSubject.classList.add('project-subject-appear');
+      yellowRectangle.classList.add('yellow-rectangle-appear');
+      projectDetails.classList.add('project-details-appear');
+    }, 2250);
+    setTimeout(function () {
+      previousNext.classList.add('opacity-1');
+    }, 3250);
+  })
+});
 
-var projectDelay = 2250;
-
-projects.forEach(function(project) {
-  setTimeout(function () {
-    project.classList.add('opacity-1');
-  }, projectDelay);
-  projectDelay+=500;
-})
-
-
-
-
-// buttons.forEach(function(button){
-//
-//   button.addEventListener('mouseover', function(){
-//
-//     button[1].classList.add('button-hover-yellow');
-//     button[0].classList.add('button-hover-black');
-//     button[2].classList.add('button-hover-black');
-//     button[3].classList.add('button-hover-black');
-//   });
-//
-//   button.addEventListener('mouseout', function(){
-//     button[1].classList.add('button-hover-black');
-//   });
-// })
+//apparition des élements d'un projet

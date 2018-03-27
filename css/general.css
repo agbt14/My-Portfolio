@@ -130,3 +130,7 @@ button{
   outline: none;
   background: none;
 }
+
+.scale-0{
+  transform: scale(0);
+}
