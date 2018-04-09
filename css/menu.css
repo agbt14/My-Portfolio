@@ -12,6 +12,7 @@
   text-decoration: none;
   font-family: 'slabo_27';
   font-size: 0.9em;
+  font-weight: 600;
   outline: none;
   cursor: pointer;
   color:var(--yellow);

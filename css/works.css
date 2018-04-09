@@ -69,7 +69,7 @@
 .nom-du-projet{
   margin-top:50px;
   font-size: 2em;
-  margin-left: -30vw;
+  margin-left: -50vw;
   transition: all 0.5s;
 }
 
@@ -82,7 +82,7 @@
   margin-left: 20px;
 }
 
-.project-one{
+.project-icon{
   z-index: 2;
   width: 30%;
   margin-bottom: -90px;
@@ -160,6 +160,25 @@
   margin-left: 15px;
 }
 
+.hover-for-more{
+  display: flex;
+}
+
+#deux, #quatre{
+  color: black;
+  font-size: 1em;
+  font-family: 'novaregular';
+  opacity: 0 !important;
+  transition: all 0.5s;
+}
+
+#un:hover,  #deux{
+  opacity : 1;
+}
+
+#trois:hover #quatre{
+  opacity : 1;
+}
 .previous-next{
   display: flex;
   justify-content: flex-end;
@@ -171,13 +190,49 @@
   transition: all 0.5s;
 }
 
-.previous, .next{
+
+
+/* effet hover sur previous et next */
+.previous-next button {
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	transition: color 0.3s;
+  position: relative;
   font-family: 'novaregular';
   font-size: 1.5em;
   color: var(--darkBlue);
   cursor: pointer;
   z-index: 2;
 }
+
+.previous-next button::before {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	color: transparent;
+	content: '•';
+	text-shadow: 0 0 transparent;
+	font-size: 1.2em;
+	-webkit-transition: text-shadow 0.3s, color 0.3s;
+	-moz-transition: text-shadow 0.3s, color 0.3s;
+	transition: text-shadow 0.3s, color 0.3s;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	transform: translateX(-50%);
+	pointer-events: none;
+}
+
+.previous-next button:hover::before,
+.previous-next button:focus::before {
+	color: var(--darkBlue);
+	text-shadow: 10px 0 var(--darkBlue), -10px 0 var(--darkBlue);
+}
+
+.previous-next button:hover,
+.previous-next button:focus {
+	color:var(--lightBlue);
+}
+
 
 .margin-left-0{
   margin-left : 0;
@@ -190,4 +245,73 @@
   background-position: center;
   opacity: 0;
   transition: all 0.4s ease-in-out;
+}
+
+
+/* SLIDESHOW */
+
+.slider{
+  width: 100%;
+  height:100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide{
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  width:100%;
+  height:100%;
+  transition: opacity 1s;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  opacity:0;
+}
+
+h1{
+  color:white;
+  padding-right:20px;
+}
+
+.current{
+  opacity: 1;
+}
+
+.un{
+  background-image: url(https://placem.at/places?w=800&h=600&txt=&random=1);
+}
+
+.deux {
+  background-image: url(https://placem.at/places?w=800&h=600&txt=&random=2);
+}
+
+.trois {
+  background-image: url(https://placem.at/places?w=800&h=600&txt=&random=3);
+}
+
+.quatre {
+  background-image: url(https://placem.at/places?w=800&h=600&txt=&random=4);
+}
+
+.cinq{
+  background-image: url(https://placem.at/places?w=800&h=600&txt=&random=5);
+}
+
+
+.controls{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 70px;
+  z-index:2;
+}
+
+.controls > span{
+  cursor: pointer;
+  user-select: none; /*empêche la sélection*/
 }

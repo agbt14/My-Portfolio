@@ -30,22 +30,22 @@
       <div class="projects">
 
         <div class="project-container">
-          <img class="project-number" data-image="img/affiche.png" src="img/SVG/01.svg" alt="">
+          <img class="project-number" data-project="1" data-image="img/affiche.png" src="img/SVG/01.svg" alt="">
           <div class="blue-line"></div>
         </div>
 
         <div class="project-container">
-          <img class="project-number" data-image="img/test3.jpg" src="img/SVG/02.svg" alt="">
+          <img class="project-number" data-project="2" data-image="img/test3.jpg" src="img/SVG/02.svg" alt="">
           <div class="blue-line"></div>
         </div>
 
         <div class="project-container">
-          <img class="project-number" data-image="img/test2.jpg" src="img/SVG/03.svg" alt="">
+          <img class="project-number" data-project="3" data-image="img/test2.jpg" src="img/SVG/03.svg" alt="">
           <div class="blue-line"></div>
         </div>
 
         <div class="project-container">
-          <img class="project-number" data-image="img/test3.jpg" src="img/SVG/04.svg" alt="">
+          <img class="project-number" data-project="4" data-image="img/test3.jpg" src="img/SVG/04.svg" alt="">
           <div class="blue-line"></div>
         </div>
 
@@ -56,36 +56,26 @@
       <div class="project-clicked">
         <div class="project-name">
           <div class="project-number-container">
-            <img class="project-one" src="img/SVG/01.svg" alt="">
+            <img class="project-icon" src="img/SVG/01.svg" alt="">
             <div class="blue-line-decoration"></div>
           </div>
           <h2 class="nom-du-projet" >Nom du projet</h2>
         </div>
         <div class="project-description">
           <div class="yellow-rectangle">
-            <p class="project-subject">
-              "At vero eos et accusamus et iusto odio dignissimos ducimus
-              qui blanditiis praesentium voluptatum deleniti atque corrupti
-              quos dolores et quas molestias excepturi sint occaecati cupiditate
-              non provident, similique sunt in culpa qui officia deserunt mollitia
-              animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
-              est et expedita distinctio. Nam libero tempore, cum soluta nobis
-              est eligendi optio cumque nihil impedit quo minus id quod maxime
-              placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-              repellendus. Temporibus autem quibusdam et aut officiis debitis aut
-              rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
-              et molestiae non recusandae. Itaque earum rerum hic tenetur a
-              sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-              consequatur aut perferendis doloribus asperiores repellat."
-            </p>
+            <p class="project-subject"></p>
             <div class="project-details">
               <div class="realised-for">
                 <div class="circle"></div>
-                <p>REALISED FOR <span></span></p>
+                <p class="hover-for-more">
+                  <span id="un">REALISED FOR</span><span id="deux">SCHOOL</span>
+                </p>
               </div>
               <div class="realisation-year">
                 <div class="circle"></div>
-                <p>YEAR</p>
+                <p class="hover-for-more">
+                  <span id="trois">YEAR</span><span id="quatre"> : AAAA</span>
+                </p>
               </div>
             </div>
 
@@ -103,7 +93,33 @@
     <!-- fin page gauche-->
 
     <!-- début page droite-->
-    <div class="part img-part"></div>
+    <div class="part img-part">
+      
+      <div class="slider">
+        <div class="slide un pre-previous">
+          <h1>Slide 1</h1>
+        </div>
+        <div class="slide deux previous">
+          <h1>Slide 2</h1>
+        </div>
+        <div class="slide trois current">
+          <h1>Slide 3</h1>
+        </div>
+        <div class="slide quatre next">
+          <h1>Slide 4</h1>
+        </div>
+        <div class="slide cinq ne-next">
+          <h1>Slide 5</h1>
+        </div>
+
+
+        <div class="controls">
+          <span id="left"><</span>
+          <span id="right">></span>
+        </div>
+
+      </div>
+    </div>
 
 
   <!-- fin page droite-->
