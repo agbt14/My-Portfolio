@@ -123,15 +123,10 @@ anime({
 
 //GIF FLIP
 
-var myAttributes = document.querySelectorAll('.I');
-var lines = document.querySelectorAll('.line');
+var myAttributes = document.querySelectorAll('#card');
 
-myAttributes.forEach(function(attribute){
-  attribute.addEventListener('click', function(){
-    attribute.classList.add('opacity-0');
-    var gif = document.createElement('div');
-    gif.classList.add('gif');
-    gif.style.backgroundImage = 'url(../img/test1.jpg)';
-    attribute.appendChild(gif);
+myAttributes.forEach(function(myAttribute){
+  myAttribute.addEventListener('click', function(){
+    myAttribute.classList.toggle('flipped');
   })
-});
+})

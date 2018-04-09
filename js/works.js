@@ -43,7 +43,9 @@ projects.forEach(function(project){
   //détecter lorsque le hover se termine
   project.addEventListener('mouseout', function(){
     //alors, remettre l'image de départ
-    // imgPart.style.backgroundImage = 'url(../img/test1.jpg)';
+    if (!imgPart.classList.contains('on-project')) {
+      imgPart.style.backgroundImage = 'url(../img/test1.jpg)';
+    }
   });
   project.addEventListener('click', function(){
 
@@ -52,6 +54,9 @@ projects.forEach(function(project){
       projectsContainer.style.display = 'none';
       projectClicked.style.display='flex';
     })
+
+    imgPart.classList.add('on-project');
+    imgPart.style.backgroundImage = 'none';
 
 //Parseint permet de changer une chaine de caractères en un nombre entier
     currentProjectNumber = parseInt(project.dataset.project, 10);

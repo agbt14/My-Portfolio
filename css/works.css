@@ -255,6 +255,11 @@
   height:100%;
   position: relative;
   overflow: hidden;
+  display: none;
+}
+
+.on-project .slider {
+  display: flex;
 }
 
 .slide{
@@ -311,7 +316,20 @@ h1{
   z-index:2;
 }
 
-.controls > span{
+#left, #right{
   cursor: pointer;
   user-select: none; /*empêche la sélection*/
+  width: 12%;
+  padding : 0 20px;
+  /* background-color: #7ed3db;
+  border-radius: 50%; */
+  stroke: white;
+  fill : white;
+  /* stroke-width : 1px; */
+  /* stroke-dasharray : 0 5px; */
+
+}
+
+#left{
+  transform: rotate(180deg);
 }
