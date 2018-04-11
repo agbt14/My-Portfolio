@@ -303,8 +303,7 @@ h1.hey {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-grow: 1;
-  align-items: center;
+
 }
 
 .I{
@@ -313,17 +312,16 @@ h1.hey {
   align-items: center;
   width: 50%;
   height: 100%;
-  /* border: 2px solid var(--lightBlue); */
   font-family: 'novaregular';
-  font-size: 3em;
+  font-size: 2em;
   color: var(--lightBlue);
-  letter-spacing: 3px;
+  letter-spacing:3px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-
   position: relative;
   perspective: 800px;
   overflow: hidden;
+  text-align: center;
 }
 
 

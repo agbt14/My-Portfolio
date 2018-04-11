@@ -179,6 +179,7 @@
 #trois:hover #quatre{
   opacity : 1;
 }
+
 .previous-next{
   display: flex;
   justify-content: flex-end;
@@ -189,8 +190,6 @@
   opacity: 0;
   transition: all 0.5s;
 }
-
-
 
 /* effet hover sur previous et next */
 .previous-next button {
@@ -232,7 +231,6 @@
 .previous-next button:focus {
 	color:var(--lightBlue);
 }
-
 
 .margin-left-0{
   margin-left : 0;

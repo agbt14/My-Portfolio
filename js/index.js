@@ -26,9 +26,9 @@ window.onload = function() {
 
   landingPagePart[0].classList.add('height-100');
 
-  setTimeout(function(){
-    container1.style.alignItems = 'flex-end';
-  }, 500);
+  // setTimeout(function(){
+  //   container1.style.alignItems = 'flex-end';
+  // }, 500);
 
   setTimeout(function(){
     landingPagePart[1].classList.add('height-100');
@@ -90,5 +90,30 @@ clickToSee.forEach(function (click) {
     setTimeout(function () {
       window.location.href = click.dataset.page;
     }, 500);
+  });
+});
+
+
+
+
+//MOUSEMOVE
+
+var body = document.querySelector('body');
+var translateContainers = document.querySelectorAll('.translate-container');
+var homepageLeft = document.querySelector('.homepage-left');
+var pmm = {x: 0, y: 0};
+
+body.addEventListener('mousemove', function(e) {
+  var dx = Math.abs(pmm.x - e.clientX);
+  var dy = Math.abs(pmm.y - e.clientY);
+  pmm = {x: e.clientX, y: e.clientY};
+  
+  // console.log(homepageLeft.offsetWidth);
+  // console.log(homepageLeft.offsetHeight);
+
+  translateContainers.forEach(function(translateContainer){
+    console.log(translateContainer.offsetWidth);
+      translateContainer.style.top = dy + 'px';
+      translateContainer.style.left = dx + 'px';
   });
 });

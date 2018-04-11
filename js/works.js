@@ -135,43 +135,43 @@ var changeProjectContent = function(project){
 
 
 // SLIDESHOW
+//
+// var left = document.querySelector('#left');
+// var right = document.querySelector('#right');
+//
+// left.addEventListener('click',function() { // call back
 
-var left = document.querySelector('#left');
-var right = document.querySelector('#right');
+// la div ayant pour classe 'pre-previous' la perd et elle récupère la classe previous
+// la div ayant pour classe 'previous' la perd et elle récupère la classe 'current'
+// la div ayant pour classe 'current' la perd et elle récupère la classe 'next'
+// la div ayant pour classe 'next' la perd et elle récupère la classe ne-next
+// la div ayant pour classe 'ne-next' la perd et récupère la classe pre-previous
 
-left.addEventListener('click',function() { // call back
-
-// la div ayant pour classe 'pre-previous' la perd et elle récupère la classe ne-next
-// la div ayant pour classe 'previous' la perd et elle récupère la classe 'pre-previous'
-// la div ayant pour classe 'current' la perd et elle récupère la classe 'previous'
-// la div ayant pour classe 'next' la perd et elle récupère la classe current
-// la div ayant pour classe 'ne-next' la perd et récupère la classe next
-
-  var prePrevious = document.querySelector('.pre-previous');
-  var previous = document.querySelector('.previous');
-  var current = document.querySelector('.current');
-  var next = document.querySelector('.next');
-  var neNext = document.querySelector('.ne-next');
-
-  prePrevious.classList.add('ne-next');
-  prePrevious.classList.remove('pre-previous');
-
-  previous.classList.add('pre-previous');
-  previous.classList.remove('previous');
-
-  current.classList.add('previous');
-  current.classList.remove('current');
-
-  next.classList.add('current');
-  next.classList.remove('next');
-
-  neNext.classList.add('next');
-  neNext.classList.remove('ne-next');
-});
+//   var prePrevious = document.querySelector('.pre-previous');
+//   var previous = document.querySelector('.previous');
+//   var current = document.querySelector('.current');
+//   var next = document.querySelector('.next');
+//   var neNext = document.querySelector('.ne-next');
+//
+//   prePrevious.classList.add('previous');
+//   prePrevious.classList.remove('pre-previous');
+//
+//   previous.classList.add('current');
+//   previous.classList.remove('previous');
+//
+//   current.classList.add('next');
+//   current.classList.remove('current');
+//
+//   next.classList.add('ne-next');
+//   next.classList.remove('next');
+//
+//   neNext.classList.add('pre-previous');
+//   neNext.classList.remove('ne-next');
+// });
 
 //effet disgracieux quand next devient previous et quand previous
 // devient next
-right.addEventListener('click',function() { // call back
+// right.addEventListener('click',function() { // call back
 
   // la div ayant pour classe 'pre-previous' la perd et elle récupère la classe ne-next
   // la div ayant pour classe 'previous' la perd et elle récupère la classe 'pre-previous'
@@ -180,24 +180,61 @@ right.addEventListener('click',function() { // call back
   // la div ayant pour classe 'ne-next' la perd et récupère la classe next
 
 
-  var prePrevious = document.querySelector('.pre-previous');
-  var previous = document.querySelector('.previous');
+//   var prePrevious = document.querySelector('.pre-previous');
+//   var previous = document.querySelector('.previous');
+//   var current = document.querySelector('.current');
+//   var next = document.querySelector('.next');
+//   var neNext = document.querySelector('.ne-next');
+//
+//   prePrevious.classList.add('ne-next');
+//   prePrevious.classList.remove('pre-previous');
+//
+//   previous.classList.add('pre-previous');
+//   previous.classList.remove('previous');
+//
+//   current.classList.add('previous');
+//   current.classList.remove('current');
+//
+//   next.classList.add('current');
+//   next.classList.remove('next');
+//
+//   neNext.classList.add('next');
+//   neNext.classList.remove('ne-next');
+// });
+
+
+
+// SLIDESHOW
+
+
+var changeSlide = function(direction) {
+  //on récupère le slide visible/current
+
   var current = document.querySelector('.current');
-  var next = document.querySelector('.next');
-  var neNext = document.querySelector('.ne-next');
 
-  prePrevious.classList.add('ne-next');
-  prePrevious.classList.remove('pre-previous');
+  //on récupère son data-slide
+  var slideNumber = parseInt(current.dataset.slide);
 
-  previous.classList.add('pre-previous');
-  previous.classList.remove('previous');
+	if (direction === 'next') {
 
-  current.classList.add('previous');
-  current.classList.remove('current');
+		if (slideNumber === 4) {
+			slideNumber = 1
+		} else {
+			slideNumber += 1
+		}
 
-  next.classList.add('current');
-  next.classList.remove('next');
+	} else {
+		if (slideNumber === 1) {
+			slideNumber = 4
+		}else {
+			slideNumber -= 1
+		}
+	}
+};
 
-  neNext.classList.add('next');
-  neNext.classList.remove('ne-next');
-});
+
+//ON ENLÈVE L'ÉTAT ACTIF AU SLIDE ACTUEL
+	current.classList.remove('current')
+
+	//UNE FOIS L'ANIMATION DE DISPARITION TERMINÉE, ON LE CACHE ET ON DÉCACHE LE NOUVEAU SLIDE
+	current.classList.add('none')

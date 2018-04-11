@@ -6,6 +6,11 @@
   align-items: center;
 }
 
+.translate-container{
+  position: relative;
+  transition: all 0.3s;
+}
+
 .title{
   font-size: 10em;
   font-family: 'novaregular';
@@ -150,4 +155,8 @@ p{
   color : black;
   border-top : 1px solid black;
   border-bottom : 1px solid black;
+}
+
+.translate-left{
+  transform: translate(-10px);
 }
