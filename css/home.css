@@ -58,6 +58,10 @@ p{
   width: 100%;
 }
 
+.homepage-left .title-container{
+  display: flex;
+}
+
 .homepage-left .title-part{
   padding-left: 30px;
 }

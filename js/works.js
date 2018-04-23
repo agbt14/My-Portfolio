@@ -58,11 +58,11 @@ projects.forEach(function(project){
     imgPart.classList.add('on-project');
     imgPart.style.backgroundImage = 'none';
 
-//Parseint permet de changer une chaine de caractères en un nombre entier
+    //Parseint permet de changer une chaine de caractères en un nombre entier
     currentProjectNumber = parseInt(project.dataset.project, 10);
     changeProjectContent(currentProjectNumber);
 
-//gère les bouttons previous et next
+    //gère les bouttons previous et next
     previousButton.addEventListener('click', function(){
       if (currentProjectNumber == 1) {
         //attention : si des projets se rajoutent,  penser à changer le currentProjectNumber
@@ -83,7 +83,7 @@ projects.forEach(function(project){
       changeProjectContent(currentProjectNumber);
     })
 
-//apparition des éléments de la page
+    //apparition des éléments de la page
     setTimeout(function () {
       nomDuProjet.classList.add('margin-left-0');
       projectIcon.classList.add('margin-left-0');
@@ -110,25 +110,25 @@ var loremIpsum = "At vero eos et accusamus et iusto odio dignissimos ducimus qui
 var changeProjectContent = function(project){
   switch (project) {
     case 1:
-      projectIcon.src="../img/SVG/01.svg";
-      nomDuProjet.textContent="Webdesign pour lebonbon.fr";
-      projectSubject.textContent = projectOneContent;
-      break;
+    projectIcon.src="../img/SVG/01.svg";
+    nomDuProjet.textContent="Webdesign pour lebonbon.fr";
+    projectSubject.textContent = projectOneContent;
+    break;
     case 2:
-      projectIcon.src="../img/SVG/02.svg";
-      nomDuProjet.textContent="Brasserie du Bouffay";
-      projectSubject.textContent = loremIpsum;
-      break;
+    projectIcon.src="../img/SVG/02.svg";
+    nomDuProjet.textContent="Brasserie du Bouffay";
+    projectSubject.textContent = loremIpsum;
+    break;
     case 3:
-      projectIcon.src="../img/SVG/03.svg";
-      nomDuProjet.textContent="Affiche d'un festival";
-      projectSubject.textContent = loremIpsum;
-      break;
+    projectIcon.src="../img/SVG/03.svg";
+    nomDuProjet.textContent="Affiche d'un festival";
+    projectSubject.textContent = loremIpsum;
+    break;
     case 4:
-      projectIcon.src="../img/SVG/04.svg";
-      nomDuProjet.textContent="Social Media Strategy";
-      projectSubject.textContent = loremIpsum;
-      break;
+    projectIcon.src="../img/SVG/04.svg";
+    nomDuProjet.textContent="Social Media Strategy";
+    projectSubject.textContent = loremIpsum;
+    break;
   }
 };
 
@@ -173,11 +173,11 @@ var changeProjectContent = function(project){
 // devient next
 // right.addEventListener('click',function() { // call back
 
-  // la div ayant pour classe 'pre-previous' la perd et elle récupère la classe ne-next
-  // la div ayant pour classe 'previous' la perd et elle récupère la classe 'pre-previous'
-  // la div ayant la classe CSS 'current' la perd, et elle récupère la classe CSS previous
-  // la div ayant pour classe 'next' la perd et elle récupère la classe 'current'
-  // la div ayant pour classe 'ne-next' la perd et récupère la classe next
+// la div ayant pour classe 'pre-previous' la perd et elle récupère la classe ne-next
+// la div ayant pour classe 'previous' la perd et elle récupère la classe 'pre-previous'
+// la div ayant la classe CSS 'current' la perd, et elle récupère la classe CSS previous
+// la div ayant pour classe 'next' la perd et elle récupère la classe 'current'
+// la div ayant pour classe 'ne-next' la perd et récupère la classe next
 
 
 //   var prePrevious = document.querySelector('.pre-previous');
@@ -206,35 +206,56 @@ var changeProjectContent = function(project){
 
 // SLIDESHOW
 
+//BOUTON QUI PASSE AU SLIDE PRÉCÉDENT
+
+var slideLeft = document.querySelector('#left')
+slideLeft.addEventListener('click', function(){
+  changeSlide('prev');
+});
+
+
+//BOUTON QUI PASSE AU SLIDE SUIVANT
+var slideRight = document.querySelector('#right')
+slideRight.addEventListener('click', function() {
+  changeSlide('next');
+});
+
 
 var changeSlide = function(direction) {
-  //on récupère le slide visible/current
 
-  var current = document.querySelector('.current');
+  //on récupère le slide visible/current
+  var current = document.querySelector('.slide.current');
 
   //on récupère son data-slide
   var slideNumber = parseInt(current.dataset.slide);
 
-	if (direction === 'next') {
+  if (direction == 'next') {
 
-		if (slideNumber === 4) {
-			slideNumber = 1
-		} else {
-			slideNumber += 1
-		}
+    if (slideNumber == 5) {
+      slideNumber = 1
+    } else {
+      slideNumber += 1
+    }
 
-	} else {
-		if (slideNumber === 1) {
-			slideNumber = 4
-		}else {
-			slideNumber -= 1
-		}
-	}
+  } else {
+    if (slideNumber == 1) {
+      slideNumber = 5
+    }else {
+      slideNumber -= 1
+    }
+  }
+  //ON ENLÈVE L'ÉTAT ACTIF AU SLIDE ACTUEL
+  current.classList.remove('current')
+
+  //UNE FOIS L'ANIMATION DE DISPARITION TERMINÉE, ON LE CACHE ET ON DÉCACHE LE NOUVEAU SLIDE
+  setTimeout(function () {
+    current.classList.add('none')
+    document.querySelector(".slide[data-slide='"+slideNumber+"']").classList.remove('none');
+  }, 250);
+
+
+  //APRÈS UNE COURTE PAUSE ON AJOUTER LA CLASS CURRENT AU NOUVEAU SLIDE
+  setTimeout(function () {
+    document.querySelector(".slide[data-slide='"+slideNumber+"']").classList.add('current')
+  }, 300);
 };
-
-
-//ON ENLÈVE L'ÉTAT ACTIF AU SLIDE ACTUEL
-	current.classList.remove('current')
-
-	//UNE FOIS L'ANIMATION DE DISPARITION TERMINÉE, ON LE CACHE ET ON DÉCACHE LE NOUVEAU SLIDE
-	current.classList.add('none')
